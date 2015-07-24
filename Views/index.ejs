@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href='/stylesheets/css/bootstrap.css' rel='stylesheet'/>
+        <title><%= title %></title>
+        <style>
+            pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+            .string { color: green; }
+            .number { color: darkorange; }
+            .boolean { color: blue; }
+            .null { color: magenta; }
+            .key { color: red; }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>io.test</h2>
+            
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input id="api-addr" class="form-control" placeholder="API 地址" type="text">
+                        <span class="input-group-btn">
+
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span id="method"></span> <span class="caret"></span></button>
+                               <ul class="dropdown-menu dropdown-menu-right">
+                                 <li><a href="#">GET</a></li>
+                                 <li><a href="#">POST</a></li>
+                               </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <textarea id='in-params' rows="5" cols="40" class="form-control" placeholder = "参数"></textarea>
+                    <p class="text-info">
+                        类似： {"account":"test"}  ,  {"id":1}
+                    </p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-primary btn-block" id="btn-check">检测输入参数</button>
+                    <div class="">
+                        <pre id="param-preview">
+
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <button id="btn-go" class="btn btn-success btn-block" type="button">Go!</button>
+
+            <div id="loading-div" style="padding: 5px; text-align:center;  margin-bottom:5px;" class="bg-info">
+                <p class="text-warning">loading...</p>
+            </div>
+
+            <hr>
+            结果：
+            <pre id="result">
+
+            </pre>
+
+        </div>
+
+        <script src="/javascripts/jquery.min.js"></script>
+        <script src="/javascripts/bootstrap.js"></script>
+        <script src="/javascripts/app/index.js"></script>
+    </body>
+
+</html>
